@@ -27,12 +27,10 @@ class MainActivity : AppCompatActivity() {
         val targetSdk = applicationInfo.targetSdkVersion
 
         // Target SDK / Min API section
-        findViewById<TextView>(R.id.targetSdkLabel) // text set in XML
         findViewById<TextView>(R.id.targetSdkValue).text =
             getString(R.string.target_sdk_value, BuildConfig.ANDROID_VERSION_LABEL, targetSdk)
 
         // Current device Android version
-        findViewById<TextView>(R.id.deviceVersionLabel) // text set in XML
         findViewById<TextView>(R.id.deviceVersionValue).text =
             getString(R.string.device_version_value, Build.VERSION.RELEASE, Build.VERSION.SDK_INT)
 
