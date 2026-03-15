@@ -9,10 +9,17 @@ android {
 
     signingConfigs {
         create("bayton") {
-            storeFile = file("/users/jasonbayton/baytonkeyandroidapp")
-            storePassword = findProperty("keystorePassword") as String? ?: ""
-            keyAlias = findProperty("keyAlias") as String? ?: ""
-            keyPassword = findProperty("keyPassword") as String? ?: ""
+            storeFile = file(
+                findProperty("keystorePath") as String?
+                    ?: System.getenv("KEYSTORE_PATH")
+                    ?: "keystore.jks"
+            )
+            storePassword = findProperty("keystorePassword") as String?
+                ?: System.getenv("KEYSTORE_PASSWORD") ?: ""
+            keyAlias = findProperty("keyAlias") as String?
+                ?: System.getenv("KEY_ALIAS") ?: ""
+            keyPassword = findProperty("keyPassword") as String?
+                ?: System.getenv("KEY_PASSWORD") ?: ""
         }
     }
 
@@ -65,6 +72,7 @@ android {
             create("sdk$api") {
                 dimension = "sdk"
                 targetSdk = api
+                versionCode = api
                 versionNameSuffix = "-sdk$api"
                 buildConfigField("String", "ANDROID_VERSION_LABEL", "\"Android $version\"")
                 buildConfigField("int", "TARGET_SDK_LEVEL", "$api")

@@ -7,22 +7,47 @@ set -euo pipefail
 echo "=== Bayton SDK Demo - Build All Variants ==="
 echo ""
 
-# Prompt for signing credentials
-echo -n "Keystore password: "
-read -s KEYSTORE_PASSWORD
-echo ""
-echo -n "Key alias: "
-read KEY_ALIAS
-echo -n "Key password: "
-read -s KEY_PASSWORD
-echo ""
+# Load .env if present, then prompt for any missing values
+if [ -f .env ]; then
+    echo "Loading signing config from .env..."
+    set -a
+    source .env
+    set +a
+fi
+
+if [ -z "${KEYSTORE_PATH:-}" ]; then
+    echo -n "Keystore path: "
+    read KEYSTORE_PATH
+    export KEYSTORE_PATH
+fi
+
+if [ -z "${KEYSTORE_PASSWORD:-}" ]; then
+    echo -n "Keystore password: "
+    read -s KEYSTORE_PASSWORD
+    echo ""
+    export KEYSTORE_PASSWORD
+fi
+
+if [ -z "${KEY_ALIAS:-}" ]; then
+    echo -n "Key alias: "
+    read KEY_ALIAS
+    export KEY_ALIAS
+fi
+
+if [ -z "${KEY_PASSWORD:-}" ]; then
+    echo -n "Key password: "
+    read -s KEY_PASSWORD
+    echo ""
+    export KEY_PASSWORD
+fi
+
 echo ""
 
 echo "Building all SDK target variants..."
-./gradlew assembleRelease \
-    -PkeystorePassword="$KEYSTORE_PASSWORD" \
-    -PkeyAlias="$KEY_ALIAS" \
-    -PkeyPassword="$KEY_PASSWORD"
+./gradlew assembleRelease
+
+# Clear credentials from environment
+unset KEYSTORE_PASSWORD KEY_PASSWORD
 
 # Collect APKs into a single output directory with clear names
 OUTPUT_DIR="output_apks"
