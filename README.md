@@ -117,4 +117,4 @@ Replace the filename with whichever variant you want to test.
 
 ## Licence
 
-This project is provided as-is for educational and testing purposes.
+This project is licensed under the [GNU General Public License v3.0](LICENCE). You're free to use, modify, and redistribute it — with attribution, and any modifications must also be open-sourced under the same licence.
