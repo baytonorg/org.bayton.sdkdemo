@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BAYTON SDK Demo</string>
+    <string name="logo_description">BAYTON logo</string>
+    <string name="target_sdk_label">Target SDK / Min API:</string>
+    <string name="target_sdk_value">%1$s (%2$d)</string>
+    <string name="device_version_label">Current Android version:</string>
+    <string name="device_version_value">Android %1$s (%2$d)</string>
+    <string name="learn_more">What is this app? ›</string>
+</resources>

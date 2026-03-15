@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/logo_description"
+        android:paddingStart="96dp"
+        android:paddingEnd="96dp"
+        app:srcCompat="@drawable/bayton_logo"
+        app:layout_constraintBottom_toTopOf="@id/targetSdkLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- Target SDK section -->
+    <TextView
+        android:id="@+id/targetSdkLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/target_sdk_label"
+        android:textSize="14sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toTopOf="@id/targetSdkValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/targetSdkValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="28sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toTopOf="@id/deviceVersionLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/targetSdkLabel" />
+
+    <!-- Current device version section -->
+    <TextView
+        android:id="@+id/deviceVersionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/device_version_label"
+        android:textSize="14sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toTopOf="@id/deviceVersionValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/targetSdkValue" />
+
+    <TextView
+        android:id="@+id/deviceVersionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="28sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deviceVersionLabel" />
+
+    <TextView
+        android:id="@+id/learnMoreLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="48dp"
+        android:text="@string/learn_more"
+        android:textSize="14sp"
+        android:textColor="#FF4500"
+        android:fontFamily="sans-serif-light"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
