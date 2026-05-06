@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "org.bayton.sdkdemo"
+    namespace = "org.bayton.tools.sdkdemo"
     compileSdk = 36
 
     signingConfigs {
@@ -24,7 +24,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "org.bayton.sdkdemo"
+        applicationId = "org.bayton.tools.sdkdemo"
         minSdk = 21
         targetSdk = 36
         versionCode = 1
@@ -64,8 +64,7 @@ android {
             34 to "14",
             35 to "15",
             36 to "16",
-            // Uncomment when Android 17 SDK (API 37) is installed:
-            // 37 to "17",
+            37 to "17",
         )
 
         sdkLevels.forEach { (api, version) ->

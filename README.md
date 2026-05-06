@@ -6,7 +6,7 @@ A simple Android app that shows you what **target SDK version** it was built for
 
 Starting with Android 14, Google blocks the installation of apps that target very old versions of Android. This is a security measure — older target SDKs let apps bypass newer privacy and security protections.
 
-This project builds **several copies of the same app**, each targeting a different Android version (from Android 5.0 all the way up to Android 16). You can then try installing them on a device to see which ones are allowed and which ones get blocked.
+This project builds **several copies of the same app**, each targeting a different Android version (from Android 5.0 all the way up to Android 17). You can then try installing them on a device to see which ones are allowed and which ones get blocked.
 
 For a full explanation of how this works and why it matters, check out:
 
@@ -80,14 +80,14 @@ Run the build script:
 ./build_all.sh
 ```
 
-This will build several APKs — one for each target SDK level from API 21 (Android 5.0) to API 36 (Android 16). The finished APKs end up in the `output_apks/` folder.
+This will build several APKs — one for each target SDK level from API 21 (Android 5.0) to API 37 (Android 17). The finished APKs end up in the `output_apks/` folder.
 
 #### 5. Install on a device
 
 Connect an Android device via USB (with [USB debugging enabled](https://developer.android.com/studio/debug/dev-options#enable)), then:
 
 ```bash
-adb install output_apks/bayton-sdk-demo-target36-android16.apk
+adb install output_apks/bayton-sdk-demo-target37-android17.apk
 ```
 
 Replace the filename with whichever variant you want to test.

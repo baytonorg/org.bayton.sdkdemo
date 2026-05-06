@@ -1,4 +1,4 @@
-package org.bayton.sdkdemo
+package org.bayton.tools.sdkdemo
 
 import android.content.Intent
 import android.net.Uri
